@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "003be5b6-3d41-4f60-9553-ab992f56d537",
+		"name": "Social Platform-Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignUpUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is true\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"88manuel\",\r\n    \"email\": \"88manuel@test.com\",\r\n    \"birthDate\": \"10.28.1988\",\r\n    \"password\": \"88manuel\",\r\n    \"publicInfo\": \"info\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}users",
+					"host": [
+						"{{url}}users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SignUpUser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"88manuel\",\r\n    \"email\": \"88manuel@test.com\",\r\n    \"birthDate\": \"10.28.1988\",\r\n    \"password\": \"88manuel\",\r\n    \"publicInfo\": \"info\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users",
+							"host": [
+								"{{url}}users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "247"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f7-glCEc46Ey5S+oohD5LhRAP8cFnc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Feb 2021 13:21:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 699,\n    \"username\": \"88manuel\",\n    \"email\": \"88manuel@test.com\",\n    \"publicInfo\": \"\",\n    \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n    \"followers\": {},\n    \"following\": {},\n    \"liked\": {},\n    \"roles\": [\n        {\n            \"role\": 1\n        }\n    ],\n    \"isBanned\": false,\n    \"description\": \"no desc\",\n    \"isDeleted\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "ParameterUserLogin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usernameOrEmail\": \"88manuel\",\r\n    \"password\": \"88manuel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}users/login",
+					"host": [
+						"{{url}}users"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ParameterUserLogin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usernameOrEmail\": \"88manuel\",\r\n    \"password\": \"88manuel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users/login",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "549"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"225-d9UGnyeL6vTj43FetYj7UPFx0r8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Feb 2021 13:23:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 699,\n        \"username\": \"88manuel\",\n        \"email\": \"88manuel@test.com\",\n        \"publicInfo\": \"\",\n        \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n        \"followers\": [],\n        \"following\": [],\n        \"followersCount\": 0,\n        \"followingCount\": 0,\n        \"liked\": [],\n        \"postsCount\": 0,\n        \"roles\": [\n            {\n                \"role\": 1\n            }\n        ],\n        \"isBanned\": false,\n        \"description\": \"no desc\",\n        \"isDeleted\": false\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njk5LCJ1c2VybmFtZSI6Ijg4bWFudWVsIiwicm9sZXMiOlt7ImlkIjoyLCJyb2xlIjoxfV0sImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjE0NTE4NjMxLCJleHAiOjE2MTQ1MjIyMzF9.3FQkC4C1FqwyK3wyu3nyYA3hdtETH9U1vxqXXV62hv0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GetUserThroughID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njk5LCJ1c2VybmFtZSI6Ijg4bWFudWVsIiwicm9sZXMiOlt7ImlkIjoyLCJyb2xlIjoxfV0sImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjE0NTE4NjMxLCJleHAiOjE2MTQ1MjIyMzF9.3FQkC4C1FqwyK3wyu3nyYA3hdtETH9U1vxqXXV62hv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}users/20",
+					"host": [
+						"{{url}}users"
+					],
+					"path": [
+						"20"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetUserThroughID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users/20",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"20"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7160"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1bf8-7IBAtuurja1IbOvpq5lfXZ6jp7M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Feb 2021 13:32:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 20,\n    \"username\": \"Georgi_Stankov\",\n    \"email\": \"natreton@abv.bg\",\n    \"publicInfo\": \"\",\n    \"profilePicUrl\": \"https://i.imgur.com/fDUKqNV.jpg\",\n    \"followers\": [\n        {\n            \"id\": 21,\n            \"username\": \"Bibsy\",\n            \"profilePicUrl\": \"https://i.imgur.com/c7E6mlT.jpg\"\n        },\n        {\n            \"id\": 23,\n            \"username\": \"Startup2019\",\n            \"profilePicUrl\": \"https://i.imgur.com/GkUl9RI.jpg\"\n        },\n        {\n            \"id\": 41,\n            \"username\": \"Mojito1\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 54,\n            \"username\": \"Mango\",\n            \"profilePicUrl\": \"https://i.imgur.com/o3cH1ZL.jpg\"\n        },\n        {\n            \"id\": 87,\n            \"username\": \"student412\",\n            \"profilePicUrl\": \"https://i.imgur.com/Fu1GwGB.jpg\"\n        },\n        {\n            \"id\": 99,\n            \"username\": \"danny2\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 101,\n            \"username\": \"Stella\",\n            \"profilePicUrl\": \"https://i.imgur.com/yffjLj6.jpg\"\n        },\n        {\n            \"id\": 111,\n            \"username\": \"student413\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 116,\n            \"username\": \"mikkis\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 135,\n            \"username\": \"Barbie22\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 147,\n            \"username\": \"student416\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 157,\n            \"username\": \" Mango\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 160,\n            \"username\": \"Mishka\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 219,\n            \"username\": \"GolemPustinqk\",\n            \"profilePicUrl\": \"https://i.imgur.com/cDxDd1c.jpg\"\n        },\n        {\n            \"id\": 273,\n            \"username\": \"BlueTeam12\",\n            \"profilePicUrl\": \"https://i.imgur.com/mfSsnre.jpg\"\n        },\n        {\n            \"id\": 285,\n            \"username\": \"Blueteam5\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 363,\n            \"username\": \"Onika123\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 388,\n            \"username\": \"yogaivi\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 480,\n            \"username\": \"jtestuser5\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 497,\n            \"username\": \"piron4\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 537,\n            \"username\": \"cfn8888\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 546,\n            \"username\": \"vlinkovski\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 618,\n            \"username\": \"Damyan08\",\n            \"profilePicUrl\": \"https://i.imgur.com/7Gtgxgq.jpg\"\n        }\n    ],\n    \"following\": [\n        {\n            \"id\": 23,\n            \"username\": \"Startup2019\",\n            \"profilePicUrl\": \"https://i.imgur.com/GkUl9RI.jpg\"\n        },\n        {\n            \"id\": 163,\n            \"username\": \"qkpustinqk\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n        },\n        {\n            \"id\": 219,\n            \"username\": \"GolemPustinqk\",\n            \"profilePicUrl\": \"https://i.imgur.com/cDxDd1c.jpg\"\n        }\n    ],\n    \"followersCount\": 23,\n    \"followingCount\": 3,\n    \"liked\": [\n        {\n            \"id\": 65,\n            \"caption\": \"Doctor Who\",\n            \"coverUrl\": \"https://i.imgur.com/cXMgMDh.jpg\",\n            \"postStatus\": \"public\",\n            \"user\": {\n                \"id\": 21,\n                \"username\": \"Bibsy\",\n                \"email\": \"bibsy66@abv.bg\",\n                \"password\": \"$2a$10$LqyrNIWcSJAIGYwvViRHuOel/dNtnZGBtjRtUN6hQyWNfRLXdZOP6\",\n                \"publicInfo\": \"female\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/c7E6mlT.jpg\",\n                \"salt\": \"$2a$10$LqyrNIWcSJAIGYwvViRHuO\",\n                \"isDeleted\": false,\n                \"isBanned\": false,\n                \"description\": \"no desc\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 7,\n                \"followingCount\": 13,\n                \"postsCount\": 7\n            },\n            \"commentsCount\": \"2\",\n            \"likesCount\": 2,\n            \"createdAt\": \"2020-06-15T17:59:54.523Z\"\n        },\n        {\n            \"id\": 76,\n            \"caption\": \"\",\n            \"coverUrl\": \"https://i.imgur.com/32PMX8a.jpg\",\n            \"postStatus\": \"public\",\n            \"user\": {\n                \"id\": 20,\n                \"username\": \"Georgi_Stankov\",\n                \"email\": \"natreton@abv.bg\",\n                \"password\": \"$2a$10$D6G/zFiooEeGzpNHBvIjY.4dyG5lhnco9JAgwpbEBlpRl.1Fc6Om2\",\n                \"publicInfo\": \"\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/fDUKqNV.jpg\",\n                \"salt\": \"$2a$10$D6G/zFiooEeGzpNHBvIjY.\",\n                \"isDeleted\": false,\n                \"isBanned\": false,\n                \"description\": \"no desc\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 23,\n                \"followingCount\": 3,\n                \"postsCount\": 34\n            },\n            \"commentsCount\": \"0\",\n            \"likesCount\": 2,\n            \"createdAt\": \"2020-06-16T10:03:09.157Z\"\n        },\n        {\n            \"id\": 144,\n            \"caption\": \"\",\n            \"coverUrl\": \"https://i.imgur.com/bxIMAaD.png\",\n            \"postStatus\": \"private\",\n            \"user\": {\n                \"id\": 20,\n                \"username\": \"Georgi_Stankov\",\n                \"email\": \"natreton@abv.bg\",\n                \"password\": \"$2a$10$D6G/zFiooEeGzpNHBvIjY.4dyG5lhnco9JAgwpbEBlpRl.1Fc6Om2\",\n                \"publicInfo\": \"\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/fDUKqNV.jpg\",\n                \"salt\": \"$2a$10$D6G/zFiooEeGzpNHBvIjY.\",\n                \"isDeleted\": false,\n                \"isBanned\": false,\n                \"description\": \"no desc\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 23,\n                \"followingCount\": 3,\n                \"postsCount\": 34\n            },\n            \"commentsCount\": \"0\",\n            \"likesCount\": 1,\n            \"createdAt\": \"2020-06-21T12:36:24.292Z\"\n        },\n        {\n            \"id\": 146,\n            \"caption\": \"\",\n            \"coverUrl\": \"https://i.imgur.com/72mVupk.jpg\",\n            \"postStatus\": \"public\",\n            \"user\": {\n                \"id\": 23,\n                \"username\": \"Startup2019\",\n                \"email\": \"krem4o@abv.bg\",\n                \"password\": \"$2a$10$YPg9H7XMumeqqLGIBzp7O.qiOXmwavkCUiZaXcBw0nTPip8MKpJrK\",\n                \"publicInfo\": \"lalalala\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/GkUl9RI.jpg\",\n                \"salt\": \"$2a$10$YPg9H7XMumeqqLGIBzp7O.\",\n                \"isDeleted\": false,\n                \"isBanned\": false,\n                \"description\": \"no desc\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 10,\n                \"followingCount\": 5,\n                \"postsCount\": 18\n            },\n            \"commentsCount\": \"1\",\n            \"likesCount\": 2,\n            \"createdAt\": \"2020-06-21T12:39:32.673Z\"\n        },\n        {\n            \"id\": 150,\n            \"caption\": \"Beautiful nature \",\n            \"coverUrl\": \"https://i.imgur.com/SVNMo9a.jpg\",\n            \"postStatus\": \"private\",\n            \"user\": {\n                \"id\": 21,\n                \"username\": \"Bibsy\",\n                \"email\": \"bibsy66@abv.bg\",\n                \"password\": \"$2a$10$LqyrNIWcSJAIGYwvViRHuOel/dNtnZGBtjRtUN6hQyWNfRLXdZOP6\",\n                \"publicInfo\": \"female\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/c7E6mlT.jpg\",\n                \"salt\": \"$2a$10$LqyrNIWcSJAIGYwvViRHuO\",\n                \"isDeleted\": false,\n                \"isBanned\": false,\n                \"description\": \"no desc\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 7,\n                \"followingCount\": 13,\n                \"postsCount\": 7\n            },\n            \"commentsCount\": \"3\",\n            \"likesCount\": 1,\n            \"createdAt\": \"2020-06-21T15:02:03.121Z\"\n        },\n        {\n            \"id\": 153,\n            \"caption\": \"\",\n            \"coverUrl\": \"https://i.imgur.com/LFFc6Lz.jpg\",\n            \"postStatus\": \"private\",\n            \"user\": {\n                \"id\": 102,\n                \"username\": \"user1\",\n                \"email\": \"user1@abv.bg\",\n                \"password\": \"$2a$10$2iT38FJEdBaoDAc8M77Mwe3Qke/NAXmkZLg.xajTVSxTx.1AuVoV2\",\n                \"publicInfo\": \"\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n                \"salt\": \"$2a$10$RdaeGdVWvZLHEqQ51gOiMO\",\n                \"isDeleted\": false,\n                \"isBanned\": false,\n                \"description\": \"no desc\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 3,\n                \"followingCount\": 0,\n                \"postsCount\": 10\n            },\n            \"commentsCount\": \"1\",\n            \"likesCount\": 1,\n            \"createdAt\": \"2020-06-21T18:10:52.556Z\"\n        },\n        {\n            \"id\": 177,\n            \"caption\": \"Beautiful nature 2\",\n            \"coverUrl\": \"https://i.imgur.com/n82qxfJ.jpg\",\n            \"postStatus\": \"private\",\n            \"user\": {\n                \"id\": 21,\n                \"username\": \"Bibsy\",\n                \"email\": \"bibsy66@abv.bg\",\n                \"password\": \"$2a$10$LqyrNIWcSJAIGYwvViRHuOel/dNtnZGBtjRtUN6hQyWNfRLXdZOP6\",\n                \"publicInfo\": \"female\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/c7E6mlT.jpg\",\n                \"salt\": \"$2a$10$LqyrNIWcSJAIGYwvViRHuO\",\n                \"isDeleted\": false,\n                \"isBanned\": false,\n                \"description\": \"no desc\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 7,\n                \"followingCount\": 13,\n                \"postsCount\": 7\n            },\n            \"commentsCount\": \"2\",\n            \"likesCount\": 2,\n            \"createdAt\": \"2020-06-22T03:34:39.757Z\"\n        },\n        {\n            \"id\": 183,\n            \"caption\": \"mqu mqu\",\n            \"coverUrl\": \"https://i.imgur.com/hdb59mi.jpg\",\n            \"postStatus\": \"public\",\n            \"user\": {\n                \"id\": 111,\n                \"username\": \"student413\",\n                \"email\": \"student413@abv.bg\",\n                \"password\": \"$2a$10$iZac21U0puiajb7pq46f4uTXxm/UCP8.G20gF2iOqvUbhR4XKd9NC\",\n                \"publicInfo\": \"sasadssd\",\n                \"birthDate\": \"2095-06-07\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n                \"salt\": \"$2a$10$DJRW8OnXeCV5tNPRaDEnIO\",\n                \"isDeleted\": false,\n                \"isBanned\": true,\n                \"description\": \"No description\",\n                \"roles\": [\n                    {\n                        \"id\": 2,\n                        \"role\": 1\n                    }\n                ],\n                \"followersCount\": 2,\n                \"followingCount\": 5,\n                \"postsCount\": 2\n            },\n            \"commentsCount\": \"2\",\n            \"likesCount\": 1,\n            \"createdAt\": \"2020-06-22T12:55:18.557Z\"\n        }\n    ],\n    \"postsCount\": 34,\n    \"roles\": [\n        {\n            \"role\": 1\n        }\n    ],\n    \"isBanned\": false,\n    \"description\": \"no desc\",\n    \"isDeleted\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "FollowUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"response_body_string\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njk5LCJ1c2VybmFtZSI6Ijg4bWFudWVsIiwicm9sZXMiOlt7ImlkIjoyLCJyb2xlIjoxfV0sImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjE0NTE4NjMxLCJleHAiOjE2MTQ1MjIyMzF9.3FQkC4C1FqwyK3wyu3nyYA3hdtETH9U1vxqXXV62hv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action\": \"followUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}users/9?userID=9",
+					"host": [
+						"{{url}}users"
+					],
+					"path": [
+						"9"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "FollowUser8",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"action\": \"followUser\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users/8",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2858"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b2a-ziKD13FWfS8dQXU90lAlmJrQnUs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Feb 2021 13:41:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 8,\n        \"username\": \"Sian Cassidy\",\n        \"email\": \"Sian@mail.com\",\n        \"publicInfo\": \"\",\n        \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n        \"followers\": [\n            {\n                \"id\": 2,\n                \"username\": \"Matas Keller\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 5,\n                \"username\": \"Samia Keenan\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 41,\n                \"username\": \"Mojito1\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 90,\n                \"username\": \"nstefa\",\n                \"profilePicUrl\": \"https://i.imgur.com/jADpl7E.jpg\"\n            },\n            {\n                \"id\": 116,\n                \"username\": \"mikkis\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 152,\n                \"username\": \"par82\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 157,\n                \"username\": \" Mango\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 192,\n                \"username\": \"hjuuser66\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 233,\n                \"username\": \"nina777\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 293,\n                \"username\": \"parsy1\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 306,\n                \"username\": \"Penka1\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 363,\n                \"username\": \"Onika123\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 368,\n                \"username\": \"OnikaLivera\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 388,\n                \"username\": \"yogaivi\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 440,\n                \"username\": \"Teddy100\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 480,\n                \"username\": \"jtestuser5\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 484,\n                \"username\": \"des1slava\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 545,\n                \"username\": \"yani\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 563,\n                \"username\": \"jgtjgtj\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 618,\n                \"username\": \"Damyan08\",\n                \"profilePicUrl\": \"https://i.imgur.com/7Gtgxgq.jpg\"\n            },\n            {\n                \"id\": 631,\n                \"username\": \"Poli_net\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 670,\n                \"username\": \"damyanM1\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 675,\n                \"username\": \"Test21\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 685,\n                \"username\": \"DamyanM4\",\n                \"profilePicUrl\": \"https://i.imgur.com/VrLn9vl.jpg\"\n            },\n            {\n                \"id\": 699,\n                \"username\": \"88manuel\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            }\n        ],\n        \"following\": [],\n        \"followersCount\": 25,\n        \"followingCount\": 0,\n        \"liked\": [],\n        \"postsCount\": 3,\n        \"roles\": [\n            {\n                \"role\": 2\n            },\n            {\n                \"role\": 1\n            }\n        ],\n        \"isBanned\": false,\n        \"description\": \"no desc\",\n        \"isDeleted\": false\n    },\n    \"loggedUser\": {\n        \"id\": 699,\n        \"username\": \"88manuel\",\n        \"email\": \"88manuel@test.com\",\n        \"publicInfo\": \"\",\n        \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n        \"followers\": [],\n        \"following\": [\n            {\n                \"id\": 8,\n                \"username\": \"Sian Cassidy\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 16,\n                \"username\": \"Detelin\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            }\n        ],\n        \"followersCount\": 0,\n        \"followingCount\": 2,\n        \"liked\": [],\n        \"postsCount\": 0,\n        \"roles\": [\n            {\n                \"role\": 1\n            }\n        ],\n        \"isBanned\": false,\n        \"description\": \"no desc\",\n        \"isDeleted\": false\n    }\n}"
+				},
+				{
+					"name": "FollowUser9",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"action\": \"followUser\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users/9?userID=9",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"9"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3263"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cbf-arMby8cinxOOyYijS2Lx/qTUz/k\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Feb 2021 14:07:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 9,\n        \"username\": \"testtest\",\n        \"email\": \"testtest@gmail.com\",\n        \"publicInfo\": \"\",\n        \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n        \"followers\": [\n            {\n                \"id\": 21,\n                \"username\": \"Bibsy\",\n                \"profilePicUrl\": \"https://i.imgur.com/c7E6mlT.jpg\"\n            },\n            {\n                \"id\": 24,\n                \"username\": \"nchami\",\n                \"profilePicUrl\": \"https://i.imgur.com/9kwBic7.jpg\"\n            },\n            {\n                \"id\": 41,\n                \"username\": \"Mojito1\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 87,\n                \"username\": \"student412\",\n                \"profilePicUrl\": \"https://i.imgur.com/Fu1GwGB.jpg\"\n            },\n            {\n                \"id\": 90,\n                \"username\": \"nstefa\",\n                \"profilePicUrl\": \"https://i.imgur.com/jADpl7E.jpg\"\n            },\n            {\n                \"id\": 116,\n                \"username\": \"mikkis\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 152,\n                \"username\": \"par82\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 157,\n                \"username\": \" Mango\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 174,\n                \"username\": \"South Africa\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 205,\n                \"username\": \"Mimosa\",\n                \"profilePicUrl\": \"https://i.imgur.com/ezHVql8.jpg\"\n            },\n            {\n                \"id\": 217,\n                \"username\": \"bibi\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 233,\n                \"username\": \"nina777\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 240,\n                \"username\": \"zahyzahy\",\n                \"profilePicUrl\": \"https://i.imgur.com/V4PnGMZ.jpg\"\n            },\n            {\n                \"id\": 293,\n                \"username\": \"parsy1\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 333,\n                \"username\": \"Tatyana5\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 363,\n                \"username\": \"Onika123\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 480,\n                \"username\": \"jtestuser5\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 537,\n                \"username\": \"cfn8888\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 545,\n                \"username\": \"yani\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 556,\n                \"username\": \"ddimitrova\",\n                \"profilePicUrl\": \"https://i.imgur.com/WB7HQO7.jpg\"\n            },\n            {\n                \"id\": 563,\n                \"username\": \"jgtjgtj\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 597,\n                \"username\": \"petyakrumovva@abv.bg\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 601,\n                \"username\": \"damyanM\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 602,\n                \"username\": \"daniel.takov8\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 618,\n                \"username\": \"Damyan08\",\n                \"profilePicUrl\": \"https://i.imgur.com/7Gtgxgq.jpg\"\n            },\n            {\n                \"id\": 619,\n                \"username\": \"maria\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 670,\n                \"username\": \"damyanM1\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 685,\n                \"username\": \"DamyanM4\",\n                \"profilePicUrl\": \"https://i.imgur.com/VrLn9vl.jpg\"\n            },\n            {\n                \"id\": 699,\n                \"username\": \"88manuel\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            }\n        ],\n        \"following\": [],\n        \"followersCount\": 29,\n        \"followingCount\": 0,\n        \"liked\": [],\n        \"postsCount\": 0,\n        \"roles\": [\n            {\n                \"role\": 1\n            }\n        ],\n        \"isBanned\": false,\n        \"description\": \"no desc\",\n        \"isDeleted\": false\n    },\n    \"loggedUser\": {\n        \"id\": 699,\n        \"username\": \"88manuel\",\n        \"email\": \"88manuel@test.com\",\n        \"publicInfo\": \"\",\n        \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n        \"followers\": [],\n        \"following\": [\n            {\n                \"id\": 8,\n                \"username\": \"Sian Cassidy\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 9,\n                \"username\": \"testtest\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            },\n            {\n                \"id\": 16,\n                \"username\": \"Detelin\",\n                \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\"\n            }\n        ],\n        \"followersCount\": 0,\n        \"followingCount\": 3,\n        \"liked\": [],\n        \"postsCount\": 0,\n        \"roles\": [\n            {\n                \"role\": 1\n            }\n        ],\n        \"isBanned\": false,\n        \"description\": \"no desc\",\n        \"isDeleted\": false\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njk4LCJ1c2VybmFtZSI6ImxpbG9SaW83Iiwicm9sZXMiOlt7ImlkIjoyLCJyb2xlIjoxfV0sImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjE0MzY4OTEwLCJleHAiOjE2MTQzNzI1MTB9.HIn9G0IwiVRij9QQmAbf9sfzXJVtf4Jn0Y0y6lEry0Q",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "161.35.202.130:3100/"
+		}
+	]
+}

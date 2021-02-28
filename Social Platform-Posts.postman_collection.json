@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "5a9ef20f-41a1-4f56-af2f-4f52159d7223",
+		"name": "Social Platform-Posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPosts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njk5LCJ1c2VybmFtZSI6Ijg4bWFudWVsIiwicm9sZXMiOlt7ImlkIjoyLCJyb2xlIjoxfV0sImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjE0NTE4NjMxLCJleHAiOjE2MTQ1MjIyMzF9.3FQkC4C1FqwyK3wyu3nyYA3hdtETH9U1vxqXXV62hv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlData}}posts?take=2&skip=1",
+					"host": [
+						"{{urlData}}posts"
+					],
+					"query": [
+						{
+							"key": "take",
+							"value": "2"
+						},
+						{
+							"key": "skip",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetPosts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlData}}posts?take=2&skip=1",
+							"host": [
+								"{{urlData}}posts"
+							],
+							"query": [
+								{
+									"key": "take",
+									"value": "2"
+								},
+								{
+									"key": "skip",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1160"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"488-8kx+kAeLyaB3AyLQ6q68IxmU06U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Feb 2021 13:50:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3472,\n        \"caption\": \"Sea\",\n        \"coverUrl\": \"https://i.imgur.com/Bvhth3U.jpg\",\n        \"postStatus\": \"public\",\n        \"user\": {\n            \"id\": 685,\n            \"username\": \"DamyanM4\",\n            \"email\": \"damyanM4@abv.bg\",\n            \"password\": \"$2a$10$3.0fje9liWA3t34E6ytxl.Qt/esEe97ohFyzxNEqqlwca4KAy8yP.\",\n            \"publicInfo\": \"\",\n            \"birthDate\": \"2095-06-07\",\n            \"profilePicUrl\": \"https://i.imgur.com/VrLn9vl.jpg\",\n            \"salt\": \"$2a$10$3.0fje9liWA3t34E6ytxl.\",\n            \"isDeleted\": false,\n            \"isBanned\": false,\n            \"description\": \"no desc\",\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"role\": 1\n                }\n            ],\n            \"followersCount\": 0,\n            \"followingCount\": 6,\n            \"postsCount\": 3\n        },\n        \"commentsCount\": \"1\",\n        \"likesCount\": 0,\n        \"createdAt\": \"2021-02-26T15:44:01.872Z\"\n    },\n    {\n        \"id\": 3471,\n        \"caption\": \"Moon\",\n        \"coverUrl\": \"https://i.imgur.com/FeK0E2h.jpg\",\n        \"postStatus\": \"public\",\n        \"user\": {\n            \"id\": 685,\n            \"username\": \"DamyanM4\",\n            \"email\": \"damyanM4@abv.bg\",\n            \"password\": \"$2a$10$3.0fje9liWA3t34E6ytxl.Qt/esEe97ohFyzxNEqqlwca4KAy8yP.\",\n            \"publicInfo\": \"\",\n            \"birthDate\": \"2095-06-07\",\n            \"profilePicUrl\": \"https://i.imgur.com/VrLn9vl.jpg\",\n            \"salt\": \"$2a$10$3.0fje9liWA3t34E6ytxl.\",\n            \"isDeleted\": false,\n            \"isBanned\": false,\n            \"description\": \"no desc\",\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"role\": 1\n                }\n            ],\n            \"followersCount\": 0,\n            \"followingCount\": 6,\n            \"postsCount\": 3\n        },\n        \"commentsCount\": \"1\",\n        \"likesCount\": 0,\n        \"createdAt\": \"2021-02-26T15:43:27.498Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "PostPublic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njk5LCJ1c2VybmFtZSI6Ijg4bWFudWVsIiwicm9sZXMiOlt7ImlkIjoyLCJyb2xlIjoxfV0sImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjE0NTE4NjMxLCJleHAiOjE2MTQ1MjIyMzF9.3FQkC4C1FqwyK3wyu3nyYA3hdtETH9U1vxqXXV62hv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlData}}posts/public?take=3&skip=2",
+					"host": [
+						"{{urlData}}posts"
+					],
+					"path": [
+						"public"
+					],
+					"query": [
+						{
+							"key": "take",
+							"value": "3"
+						},
+						{
+							"key": "skip",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PostPublic",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlData}}posts/public?take=3&skip=2",
+							"host": [
+								"{{urlData}}posts"
+							],
+							"path": [
+								"public"
+							],
+							"query": [
+								{
+									"key": "take",
+									"value": "3"
+								},
+								{
+									"key": "skip",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1780"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6f4-gLlTnbGwdovxuad3HizW9jcdx+Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Feb 2021 13:58:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3471,\n        \"caption\": \"Moon\",\n        \"coverUrl\": \"https://i.imgur.com/FeK0E2h.jpg\",\n        \"postStatus\": \"public\",\n        \"user\": {\n            \"id\": 685,\n            \"username\": \"DamyanM4\",\n            \"email\": \"damyanM4@abv.bg\",\n            \"password\": \"$2a$10$3.0fje9liWA3t34E6ytxl.Qt/esEe97ohFyzxNEqqlwca4KAy8yP.\",\n            \"publicInfo\": \"\",\n            \"birthDate\": \"2095-06-07\",\n            \"profilePicUrl\": \"https://i.imgur.com/VrLn9vl.jpg\",\n            \"salt\": \"$2a$10$3.0fje9liWA3t34E6ytxl.\",\n            \"isDeleted\": false,\n            \"isBanned\": false,\n            \"description\": \"no desc\",\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"role\": 1\n                }\n            ],\n            \"followersCount\": 0,\n            \"followingCount\": 6,\n            \"postsCount\": 3\n        },\n        \"commentsCount\": \"1\",\n        \"likesCount\": 0,\n        \"createdAt\": \"2021-02-26T15:43:27.498Z\"\n    },\n    {\n        \"id\": 3470,\n        \"caption\": \"hi\",\n        \"coverUrl\": \"https://i.imgur.com/RN4RZ5V.jpg\",\n        \"postStatus\": \"public\",\n        \"user\": {\n            \"id\": 678,\n            \"username\": \"damyanM3\",\n            \"email\": \"skillo3@abv.bg\",\n            \"password\": \"$2a$10$RRdS30nR4D9eAoDHmZ/.n.tYo3crNLlWAldMADl.UhSh2iZ.voPWy\",\n            \"publicInfo\": \"\",\n            \"birthDate\": \"2095-06-07\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n            \"salt\": \"$2a$10$RRdS30nR4D9eAoDHmZ/.n.\",\n            \"isDeleted\": false,\n            \"isBanned\": false,\n            \"description\": \"no desc\",\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"role\": 1\n                }\n            ],\n            \"followersCount\": 0,\n            \"followingCount\": 0,\n            \"postsCount\": 1\n        },\n        \"commentsCount\": \"0\",\n        \"likesCount\": 0,\n        \"createdAt\": \"2021-02-24T19:06:32.424Z\"\n    },\n    {\n        \"id\": 3469,\n        \"caption\": \"Time stops\",\n        \"coverUrl\": \"https://cdn.cdnparenting.com/articles/2020/04/04145119/348883676.jpg\",\n        \"postStatus\": \"public\",\n        \"user\": {\n            \"id\": 674,\n            \"username\": \"Test12\",\n            \"email\": \"test12@test.test\",\n            \"password\": \"$2a$10$V3xI2EbS73HERyc7PCL7J.UpT11BooB1Xgsszi0Xz5Kq1Jg04Iabu\",\n            \"publicInfo\": \"\",\n            \"birthDate\": \"2095-06-07\",\n            \"profilePicUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\n            \"salt\": \"$2a$10$V3xI2EbS73HERyc7PCL7J.\",\n            \"isDeleted\": false,\n            \"isBanned\": false,\n            \"description\": \"no desc\",\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"role\": 1\n                }\n            ],\n            \"followersCount\": 0,\n            \"followingCount\": 0,\n            \"postsCount\": 1\n        },\n        \"commentsCount\": \"0\",\n        \"likesCount\": 0,\n        \"createdAt\": \"2021-02-23T17:46:19.000Z\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njk5LCJ1c2VybmFtZSI6Ijg4bWFudWVsIiwicm9sZXMiOlt7ImlkIjoyLCJyb2xlIjoxfV0sImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjE0NTE4NjMxLCJleHAiOjE2MTQ1MjIyMzF9.3FQkC4C1FqwyK3wyu3nyYA3hdtETH9U1vxqXXV62hv0"
+		},
+		{
+			"key": "urlData",
+			"value": "161.35.202.130:3100/"
+		}
+	]
+}
